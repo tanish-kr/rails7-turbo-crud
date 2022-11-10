@@ -33,7 +33,15 @@ module Rails7TurboCrud
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    # Don't generate system test files.
-    config.generators.system_tests = nil
+    config.generators do |g|
+      # Don't generate system test files.
+      g.system_tests = nil
+      g.stylesheets false
+      g.javascripts false
+      g.helper false
+      g.template_engine :erb
+      g.test_framework :rspec, view_specs: false, helper_specs: false, fixture: true
+      g.fixture_replacement :factory_girl, dir: "spec/support/factories"
+    end
   end
 end
