@@ -2,13 +2,27 @@
 
 <h1>Posts</h1>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
+<div class="table w-full mb-5">
+  <div class="table-header-group">
+    <div class="table-row">
+      <div class="table-cell text-left">Title</div>
+      <div class="table-cell text-left">Body</div>
+      <div class="table-cell text-left">Published At</div>
+      <div class="table-cell text-left">Operation</div>
+    </div>
+  </div>
+  <div class="table-row-group">
+    <% @posts.each do |post| %>
+      <div class="table-row">
+        <%= render post %>
+        <div class="table-cell">
+          <%= link_to "Show this post", post %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
-<%= link_to "New post", new_post_path %>
+<div class="flex">
+  <%= link_to "New post", new_post_path, class: "btn-primary" %>
+</div>
