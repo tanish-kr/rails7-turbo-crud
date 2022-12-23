@@ -1,10 +1,25 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @post %>
+<h1 class="heading1 mb-5"><%= @post.title %></h1>
 
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
+<dl class="description">
+  <div class="description-row">
+    <dt class="description-title">Title</dt>
+    <dd class="description-body"><%= @post.title %></dd>
+  </div>
+  <div class="description-row">
+    <dt class="description-title">Body</dt>
+    <dd class="description-body"><%= @post.body %></dd>
+  </div>
+  <div class="description-row">
+    <dt class="description-title">Published At</dt>
+    <dd class="description-body"><%= @post.published_at %></dd>
+  </div>
+</dl>
 
-  <%= button_to "Destroy this post", @post, method: :delete %>
+<div class="flex mt-3">
+  <%= link_to "Edit", edit_post_path(@post), class: "btn-primary" %>
+  <%= link_to "Back", posts_path, class: "btn-primary" %>
+
+  <%= button_to "Destroy", @post, method: :delete, class: "btn-red", form: { data: { turbo_confirm: "Are you sure?" } } %>
 </div>

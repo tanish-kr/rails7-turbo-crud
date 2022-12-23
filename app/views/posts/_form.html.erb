@@ -11,22 +11,23 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="mb-6">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-text-input" %>
   </div>
 
-  <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.text_area :body %>
+  <div class="mb-6">
+    <%= form.label :body, class: "form-label" %>
+    <%= form.text_area :body, class: "form-textarea-input", rows: 5 %>
   </div>
 
-  <div>
-    <%= form.label :published_at, style: "display: block" %>
-    <%= form.datetime_field :published_at %>
+  <div class="mb-6">
+    <%= form.label :published_at, class: "form-label" %>
+    <%= form.datetime_field :published_at, class: "form-select-input" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="flex">
+    <%= form.submit nil, class: "btn-primary" %>
+    <%= link_to "Back", posts_path, class: "btn-primary" %>
   </div>
 <% end %>
