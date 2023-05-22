@@ -17,6 +17,9 @@
         <%= render post %>
         <div class="table-cell">
           <%= link_to "Show", post, class: "text-link" %>
+          <%= link_to edit_post_path(post), class: "text-link"  do %>
+            <%= heroicon "pencil-square", options: { class: "w-6 h-6" } %>
+          <% end %>
         </div>
       </div>
     <% end %>
