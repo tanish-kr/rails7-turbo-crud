@@ -1,7 +1,9 @@
 <h1 class="heading1 mb-5">Chat Rooms</h1>
 
 <div id="messages">
-  <%= render @messages %>
+  <% @messages.each do |message| %>
+    <%= render 'rooms/messages/message', message: message %>
+  <% end %>
 </div>
 
 
