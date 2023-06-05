@@ -1,9 +1,11 @@
 <h1 class="heading1 mb-5">Chat Rooms</h1>
 
 <div id="messages">
-  <% @messages.each do |message| %>
-    <%= render 'rooms/messages/message', message: message %>
-  <% end %>
+  <div class="relative border-gray-200 dark:border-gray-700">
+    <% @messages.each do |message| %>
+      <%= render 'rooms/messages/message', message: message %>
+    <% end %>
+  </div>
 </div>
 
 
