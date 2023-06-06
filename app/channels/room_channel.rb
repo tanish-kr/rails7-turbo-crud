@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RoomChannel < ApplicationCable::Channel
   def subscribed
     # stream_from "some_channel"
@@ -10,6 +12,6 @@ class RoomChannel < ApplicationCable::Channel
 
   def speak(data)
     # ActionCable.server.broadcast("room_channel", { message: data[:message] })
-    Message.create! content: data['message']
+    Message.create! content: data["message"]
   end
 end

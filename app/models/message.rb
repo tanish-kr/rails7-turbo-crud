@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Message < ApplicationRecord
   validates :content, presence: true
   after_create_commit { MessageBroadcastJob.perform_later self }
