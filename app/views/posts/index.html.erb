@@ -1,6 +1,16 @@
+<%= turbo_frame_tag :form %>
+
 <p style="color: green"><%= notice %></p>
 
-<h1 class="heading1 mb-5">Posts</h1>
+<div class="flex items-center mb-5">
+  <div class="flex-auto">
+    <h1 class="heading1">Posts</h1>
+  </div>
+
+  <div class="flex-initial">
+    <%= link_to "New post", new_post_path, class: "btn-primary", data: { turbo_frame: :form }, aria_controls: "new-post" %>
+  </div>
+</div>
 
 <div class="table">
   <div class="table-header-group">
@@ -26,6 +36,3 @@
   </div>
 </div>
 
-<div class="flex mt-5">
-  <%= link_to "New post", new_post_path, class: "btn-primary" %>
-</div>
