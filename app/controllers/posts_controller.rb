@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   def destroy
     @post.destroy
-    redirect_to posts_url, notice: "Post was successfully destroyed."
+    flash.now.notice = "Post was successfully destroyed."
   end
 
   private

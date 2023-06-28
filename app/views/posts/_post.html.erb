@@ -15,6 +15,9 @@
     <%= link_to edit_post_path(post), class: "text-link", data: { turbo_frame: :form }  do %>
       <%= heroicon "pencil-square", options: { class: "w-6 h-6" } %>
     <% end %>
+    <%= button_to post_path(post), class: "text-link", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+      <%= heroicon "trash", options: { class: "w-6 h-6" } %>
+    <% end %>
   </div>
 </div>
 
