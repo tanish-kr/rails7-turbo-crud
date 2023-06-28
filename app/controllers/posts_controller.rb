@@ -24,7 +24,6 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      # redirect_to @post, notice: "Post was successfully created."
       flash.now.notice = "Post was successfully created."
     else
       render :new, status: :unprocessable_entity
@@ -34,7 +33,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: "Post was successfully updated."
+      flash.now.notice = "Post was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
