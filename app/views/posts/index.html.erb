@@ -21,18 +21,8 @@
       <div class="table-cell text-left">Operation</div>
     </div>
   </div>
-  <div class="table-row-group">
-    <% @posts.each do |post| %>
-      <div class="table-row <%= cycle('dark:bg-gray-900', 'dark:bg-gray-800') %>">
-        <%= render post %>
-        <div class="table-cell">
-          <%= link_to "Show", post, class: "text-link" %>
-          <%= link_to edit_post_path(post), class: "text-link"  do %>
-            <%= heroicon "pencil-square", options: { class: "w-6 h-6" } %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
+  <div class="table-row-group" id="posts">
+    <%= render @posts %>
   </div>
 </div>
 

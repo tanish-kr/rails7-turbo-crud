@@ -22,4 +22,10 @@ export default class extends Controller {
   disconnect() {
     this.drawer.hide();
   }
+
+  submit(event) {
+    if(event.detail.success) {
+      this.drawer.hide();
+    }
+  }
 }
