@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_22_064037) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_28_070624) do
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
@@ -21,6 +21,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_064037) do
     t.string "title", null: false
     t.text "body"
     t.datetime "published_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "turbo_messages", force: :cascade do |t|
+    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

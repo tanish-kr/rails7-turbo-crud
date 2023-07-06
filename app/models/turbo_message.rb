@@ -1,0 +1,2 @@
+class TurboMessage < ApplicationRecord
+end
