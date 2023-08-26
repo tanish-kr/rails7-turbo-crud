@@ -1,0 +1,7 @@
+<%= turbo_frame_tag :new_message do %>
+  <%= form_with(model: @message, url: turbo_rooms_path) do |form| %>
+    <%= form.label :title, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+    <%= form.text_field :content, class: "form-text-input" %>
+    <%= form.submit nil, class: "btn-primary" %>
+  <% end %>
+<% end %>

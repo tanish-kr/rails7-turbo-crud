@@ -1,0 +1,11 @@
+<h1 class="heading1 mb-5">Chat Rooms(Turbo)</h1>
+
+<div class="relative border-gray-200 dark:border-gray-700">
+  <%= turbo_frame_tag :messages do %>
+    <% @messages.each do |message| %>
+      <%= render 'turbo_rooms/messages/message', message: message %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= turbo_frame_tag :new_message, src: new_turbo_room_path %>
