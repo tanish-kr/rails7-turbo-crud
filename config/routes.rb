@@ -2,7 +2,10 @@
 
 Rails.application.routes.draw do
   devise_for :users
+
   mount ActionCable.server => "/cable"
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
   resources :posts
   resources :rooms
   resources :turbo_rooms
@@ -10,5 +13,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  root to: "posts#index"
 end

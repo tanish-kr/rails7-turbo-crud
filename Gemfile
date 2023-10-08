@@ -63,13 +63,13 @@ group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
   gem "factory_bot_rails"
   gem "faker"
+  gem "letter_opener"
+  gem "letter_opener_web"
   gem "rspec"
   gem "rspec-rails", "~> 6.0"
   gem "rubocop", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
-  gem "letter_opener"
-  gem "letter_opener_web"
 end
 
 group :development do
