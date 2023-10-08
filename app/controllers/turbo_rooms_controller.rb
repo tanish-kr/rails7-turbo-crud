@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TurboRoomsController < ApplicationController
   def index
     @messages = TurboMessage.order(created_at: :asc).limit(20)
@@ -11,7 +13,8 @@ class TurboRoomsController < ApplicationController
     @message = TurboMessage.new(message_params)
 
     if @message.save
-      @message.broadcast_append_to(:messages, target: :messages, partial: "turbo_rooms/messages/message", locals: { message: @message })
+      @message.broadcast_append_to(:messages, target: :messages,
+                                              partial: "turbo_rooms/messages/message", locals: { message: @message })
       flash.now.notice = "Message was successfully created."
     else
       render :new, status: :unprocessable_entity
